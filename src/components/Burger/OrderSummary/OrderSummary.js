@@ -1,29 +1,35 @@
-import React from "react";
+import React, { Component } from "react";
 import Aux from "../../../hoc/Aux";
 import Button from "../../UI/Button/Button";
 
-const orderSummary = (props) => {
-  const getTotalPrice = () => {
+class OrderSummary extends Component {
+
+  componentDidUpdate () {
+    console.log('Component Updated')
+  }
+  getTotalPrice = () => {
     return (
-      props.basePrice +
-      props.meatPrice +
-      props.cheesePrice +
-      props.baconPrice +
-      props.saladPrice
+      this.props.basePrice +
+      this.props.meatPrice +
+      this.props.cheesePrice +
+      this.props.baconPrice +
+      this.props.saladPrice
     );
   };
+  render () {
   return (
     <Aux>
-      <p> Base Price: $ {props.basePrice} </p>
-      <p> Cheese: $ {props.cheesePrice} </p>
-      <p> Meat: $ {props.meatPrice} </p>
-      <p> Bacon: $ {props.baconPrice} </p>
-      <p> Salad: $ {props.saladPrice} </p>
-      <h1> Total Price: $ {getTotalPrice()} </h1>
-      <Button type="Danger" clicked={props.purchaseCancel}> Cancel </Button> 
-      <Button type="Success" clicked={props.purchaseContinue}>Order</Button>
+      <p> Base Price: $ {this.props.basePrice} </p>
+      <p> Cheese: $ {this.props.cheesePrice} </p>
+      <p> Meat: $ {this.props.meatPrice} </p>
+      <p> Bacon: $ {this.props.baconPrice} </p>
+      <p> Salad: $ {this.props.saladPrice} </p>
+      <h1> Total Price: $ {this.getTotalPrice()} </h1>
+      <Button type="Danger" clicked={this.props.purchaseCancel}> Cancel </Button> 
+      <Button type="Success" clicked={this.props.purchaseContinue}>Order</Button>
     </Aux>
   );
+  }
 };
 
-export default orderSummary;
+export default OrderSummary;
