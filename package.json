@@ -10,6 +10,8 @@
     "prop-types": "^15.7.2",
     "react": "latest",
     "react-dom": "latest",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "latest"
   },
   "scripts": {
