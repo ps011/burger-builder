@@ -37,7 +37,7 @@ class Checkout extends Component {
     }
 
     return <div>
-        <h1 style={{textAlign: 'center'}}>Hope this tastes good!</h1>
+        <h1 style={{textAlign: 'center'}}>Hope this tastes well!</h1>
         {checkoutSummary}
         <Route path={this.props.match.path + '/contact-data'} 
         render={() => { return <ContactData ingredients={this.state.ingredients} totalPrice={this.state.totalPrice}/>}}/>
